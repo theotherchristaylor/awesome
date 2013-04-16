@@ -10,6 +10,12 @@ require("naughty")
 -- Load Debian menu entries
 require("debian.menu")
 
+-- Load vicious for widgets
+vicious = require("vicious")
+
+-- Load obvious for widgets
+require("obvious.battery")
+
 -- launch the Cairo Composite Manager
 awful.util.spawn_with_shell("cairo-compmgr &");
 
@@ -105,6 +111,10 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- }}}
 
 -- {{{ Wibox
+
+-- Battery Widget
+batterywidget = obvious.battery()
+
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" })
 
@@ -187,6 +197,7 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
+				batterywidget,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft

@@ -22,6 +22,10 @@ awful.util.spawn_with_shell("cairo-compmgr &");
 -- launch the network manager applet
 awful.util.spawn_with_shell("nm-applet");
 
+-- launch two terminals on the start desktop
+awful.util.spawn_with_shell("aterm -sr -tr -fg white -sh 40 -bg black +sb")
+awful.util.spawn_with_shell("aterm -sr -tr -fg white -sh 40 -bg black +sb")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)

@@ -112,7 +112,11 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 
 -- {{{ Wibox
 
--- Battery Widget
+-- Create Separator
+separator = widget({ type = "textbox"})
+separator.text = " :: "
+
+-- Create Battery Widget
 batterywidget = obvious.battery()
 
 -- Create a textclock widget
@@ -197,7 +201,9 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
+				separator,
 				batterywidget,
+				separator,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft

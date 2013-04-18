@@ -26,6 +26,9 @@ awful.util.spawn_with_shell("nm-applet");
 awful.util.spawn_with_shell("aterm -sr -tr -fg white -sh 40 -bg black +sb")
 awful.util.spawn_with_shell("aterm -sr -tr -fg white -sh 40 -bg black +sb")
 
+-- launch dropbox
+awful.util.spawn_with_shell("dropbox start")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)

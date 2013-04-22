@@ -109,7 +109,8 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "debian", debian.menu.Debian_menu.Debian },
-                                    { "suspend", "gksudo pm-suspend" }
+                                    { "suspend", "gksudo pm-suspend" },
+                                    { "kill it", "gksudo shutdown -h now" }
                                   }
                         })
 
